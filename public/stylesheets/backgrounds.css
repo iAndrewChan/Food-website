@@ -1,0 +1,88 @@
+.background_settings {
+  background-size:     cover;                      /* <------ */
+  background-repeat:   no-repeat;
+  background-position: center center;
+}
+
+.background_1 {
+  background-image: url("/images/index_start.jpg");
+}
+
+.background_2 {
+  background-image: url("/images/index_1.jpg");
+}
+
+.background_3 {
+  background-image: url("/images/index_3.jpg");
+}
+
+.background_4 {
+  background-image: url("/images/index_4.jpg");
+}
+
+.product_1 {
+  background-image: url("/images/product_1.jpg");
+}
+
+.product_2 {
+  background-image: url("/images/product_2.jpg");
+}
+
+.product_3 {
+  background-image: url("/images/product_3.jpg");
+}
+
+.product_3 {
+  background-image: url("/images/product_4.jpg");
+}
+
+
+.social_media_1 {
+  background-image: url("/images/icons/twitter-bird.png");
+  background-size: 600px 500px;
+}
+
+.background_info {
+  background-color: white;
+}
+.box_shadows {
+  box-shadow: 5px 5px 5px #888888;
+}
+
+.food_thai {
+  background-image: url("/images/Thai.jpg");
+}
+
+.food_american {
+  background-image: url("/images/Optimized-American.jpg");
+}
+
+.food_chinese {
+  background-image: url("/images/Chinese.jpg");
+}
+
+.food_british {
+  background-image: url("/images/British.jpg");
+}
+
+.food_italian {
+  background-image: url("/images/Italian.jpg");
+}
+
+.food_hover {
+    opacity: 0.6;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+.food_hover:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=100); /* For IE8 and earlier */
+}
+
+.photo {
+  background-image: url("/images/photo.jpg");
+}
+
+.border {
+    border-style: solid;
+}

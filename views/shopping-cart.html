@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!--<title>Synok</title>-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/styles.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/backgrounds.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/index_texts.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/chatbox.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/help.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/food.css">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <title> FOOD DEALS </title>
+</head>
+
+
+<body class ="checkout_padding">
+    <% include templates/scrollnav.html %>
+    <% if(products != null){ %>
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+                <ul class="list-group">
+                    <% products.forEach(function(product) { %>
+                        <li class="list-group-item">
+                            <a href="/remove/<%=product.item.restaurant%>"><i class="fa fa-times" aria-hidden="true"></i></a>
+                            <span class="badge"><%= product.qty %></span>
+                            <strong><%= product.item.food %></strong>
+                            <span class="label label-success"><%= product.price %></span>
+                            <a href="/reduce/<%=product.item.restaurant%>">  <i class="fa fa-minus" aria-hidden="true"></i> </a>
+                            <a href="/increase/<%=product.item.restaurant%>"> <i class="fa fa-plus" aria-hidden="true"></i> </a>
+                        </li>
+                    <% }) %>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+                <strong>Total: £<%= totalPrice %></strong>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+                <a href="/checkout" type="button" class="btn btn-success">Checkout</a>
+            </div>
+        </div>
+    <% } else {%>
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+                <h2>No Items in Cart</h2>
+            </div>
+        </div>
+    <% } %>
+</body>

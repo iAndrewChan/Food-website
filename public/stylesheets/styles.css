@@ -1,0 +1,23 @@
+.start_padding {
+  padding-top: 50px;
+}
+
+.checkout_padding {
+  padding-top: 150px;
+}
+
+.overflowfix{
+  overflow: hidden;
+}
+
+.fonts {
+  font-size:  40px;
+  font-style: italic;
+  text-align: center;
+  font-family: 'Abel', sans-serif;
+}
+
+.img {
+  height: 100%;
+  width: 100%;
+}

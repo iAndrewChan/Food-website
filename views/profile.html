@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!--<title>Synok</title>-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/styles.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/backgrounds.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/index_texts.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/chatbox.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/help.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <title> FOOD DEALS </title>
+
+</head>
+
+
+<body class ="start_padding">
+    <% include templates/scrollnav.html %>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h1>User Profile</h1>
+            <hr>
+            <h2>My Orders</h2>
+            <% orders.forEach(function(order) { %>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <ul class="list-group">
+                            <% order.forEach(function(item) { %>
+                                <li class="list-group-item">
+                                    <span class="badge"><%= item.price %></span>
+                                    <strong><%= item.restaurantItem %></strong>:     <%= item.foodItem %> | x<%= item.qty %>
+                                </li>
+                            <% }) %>
+                        </ul>
+                        <div class="panel-footer">
+                            <strong>Total Price: £<%= order[0].totalPrice %></strong>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</body>

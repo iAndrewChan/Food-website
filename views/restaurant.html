@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!--<title>Synok</title>-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Dosis|Oswald|Raleway" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/food.css">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <% include templates/scrollnav.html %>
+    <script src="/scripts/jquery.countdown.min.js"></script>
+    <title> FOOD DEALS </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.2.0/jquery-confirm.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.2.0/jquery-confirm.min.js"></script>
+</head>
+
+
+<body class ="start_padding">
+
+    <div class="carousel"
+    data-flickity='{ "wrapAround": true, "autoPlay": true, "pageDots": false}'>
+        <div class="carousel-cell">
+            <img src=<%= restaurant.imagePath1  %> alt="food can't be displayed =(" />
+        </div>
+        <div class="carousel-cell">
+            <img src=<%= restaurant.imagePath2  %> alt="food can't be displayed =(" />
+        </div>
+        <div class="carousel-cell">
+            <img src=<%= restaurant.imagePath3  %> alt="food can't be displayed =(" />
+        </div>
+    </div>
+
+    <div class= "deals">
+        <div id="count-down">
+            <p> <strong>{0:00}:{1:00}:{2:00}, hours, minutes, seconds</strong> </p>
+        </div>
+
+        <div id="deal-title">
+            <span id="deal-food-title"> <strong><%= restaurant.food  %></strong> </span>
+
+            <div id="deal-description">
+                <strong id="deal-location"> Location: <%= restaurant.location %> </strong>
+                <p id="deal-shop" > <span class="glyphicon glyphicon-map-marker"></span> <%= restaurant.restaurant  %>  <p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class= "content-sidebar-container">
+
+        <div class="content">
+
+            <span>
+                <div id="all-description">
+                    <div id="todays-deal-description">
+                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut lectus sit amet libero porttitor feugiat. Suspendisse sit amet tempor elit. Donec consequat molestie porta. Nulla pulvinar, ligula sit amet vehicula lacinia, purus turpis sodales leo, et euismod nisi erat sed tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec pellentesque mattis enim. Proin vehicula eros eu elementum bibendum.
+                        </p>
+                    </div>
+
+                    <div id="business-description">
+                        <p> <span class="color-theme-text">Why we love Cafe Matariki</span> :Nullam faucibus molestie ex, sit amet dictum turpis dignissim nec. Vivamus ut mi sed ante aliquam sollicitudin. Praesent dapibus sapien quis porta faucibus.
+                        </p>
+                    </div>
+
+                    <div id="claim-tac">
+                        <p> <span class="color-theme">How to claim</span>: Nullam hendrerit ipsum non turpis porttitor, ut mollis est tempus. Sed eu diam finibus quam dapibus eleifend nec vitae turpis. Etiam convallis nunc sit amet dignissim pretium.
+                        </p>
+                    </div>
+                </div>
+            </span>
+
+            <div class="location">
+
+                <div id="get-direction">
+                    <button type="button" id="get-direction-btn"> <p> <span class="glyphicon glyphicon-send"></span> <span id="get-direction-btn-text">Get Direction</span> </p> </button>
+                </div>
+
+                <div id="store-map"></div>
+
+            </div>
+
+        </div>
+
+        <div class="side-bar-right">
+            <div id="buy-now-description">
+                <h2><%=restaurant.food %></h2>
+
+            <div id="buy-now-template">
+                <div id="buy-now-info">
+                <p> <span class="glyphicon glyphicon-home"></span> <%= restaurant.location%> </p>
+                <p> <span class="glyphicon glyphicon-map-marker"></span> <%= restaurant.restaurant %> <p>
+                </div>
+
+                <form id="form-quantity">
+                    <label for="name" id="quantity-label">Quantity</label>
+                    <button type="button" class="btn btn-primary" id="btn-minus"> - </button>
+                    <input type="number" min="1" value="1" id="quantity-input">
+
+                    <button type="button" class="btn btn-primary" id="btn-plus"> + </button>
+                </form>
+
+                <span id="txt-price"><%= restaurant.price %></span>
+
+            </div>
+            </div>
+
+            <a href="/add-to-cart/<%=restaurant.restaurant%>" class="btn btn-primary btn-lg btn-block" id="buy-now-btn" onclick="return confirm('Are you sure?')">
+                 <span>Add to cart</span>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="recommendation">
+        <p> You May Also Like </p>
+
+        <div class="container recommendation-images">
+
+            <a href="javascript: submitForm('<%=restaurant.deal3%>');">
+            <div id="recommended-image1" >
+
+                <img src=<%= restaurant.imagePath3  %> alt="food can't be displayed =(" />
+                <div class="recommendation-description">
+                    <h2><span class="offer-title"><%= restaurant.food3  %> </span></h2>
+                    <h3><span class="glyphicon glyphicon-map-marker"></span> <%= restaurant.deal3  %> </h3>
+                </div>
+                <span id="recommendation-time-remaining1"> Time Remaining </span>
+            </div>
+            <form action="/cuisines/deals/restaurant" method="post" id="<%=restaurant.deal3%>">
+                <input type="hidden" name="restaurant_choice" value="<%= restaurant.deal3 %>">
+            </form>
+            </a>
+
+            <a href="javascript: submitForm('<%=restaurant.deal2%>');">
+            <div id="recommended-image2">
+                <img src=<%= restaurant.imagePath2  %> alt="food can't be displayed =(" />
+                <div class="recommendation-description">
+                    <h2><span class="offer-title"><%= restaurant.food2  %> </span></h2>
+                    <h3><span  class="glyphicon glyphicon-map-marker"></span> <%= restaurant.deal2  %>  </h3>
+                </div>
+                <span id="recommendation-time-remaining2"> Time Remaining </span>
+            </div>
+            <form action="/cuisines/deals/restaurant" method="post" id="<%=restaurant.deal2%>">
+                <input type="hidden" name="restaurant_choice" value="<%= restaurant.deal2 %>">
+            </form>
+            </a>
+
+            <a href="javascript: submitForm('<%=restaurant.deal1%>');">
+            <div id="recommended-image3">
+                <img src=<%= restaurant.imagePath1  %> alt="food can't be displayed =(" />
+                <div class="recommendation-description">
+                    <h2><span class="offer-title"><%= restaurant.food1  %> </span></h2>
+                    <h3><span class="glyphicon glyphicon-map-marker"></span> <%= restaurant.deal1  %> </h3>
+                </div>
+                <span id="recommendation-time-remaining3"> Time Remaining </span>
+            </div>
+            <form action="/cuisines/deals/restaurant" method="post" id="<%=restaurant.deal1%>">
+                <input type="hidden" name="restaurant_choice" value="<%= restaurant.deal1 %>">
+            </form>
+            </a>
+        </div>
+
+    </div>
+
+<script src="/scripts/food.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0unX6fN-Cfw0DktQ70HO3NobD2zGuM_o&callback=initMap"async defer></script>
+<script>
+    function submitForm(restaurant){
+        // window.alert(restaurant);
+        document.getElementById(restaurant).submit();
+    }
+</script>
+
+</body>
+</html>

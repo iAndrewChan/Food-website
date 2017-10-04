@@ -1,0 +1,17 @@
+.help-fixedbutton {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+}
+
+.help-button_settings {
+  background-color:#00aaff;
+  color: white;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 15px;
+  width: 150px;
+}
+
+#help-join-us {
+	margin-top:5%;
+}

@@ -1,0 +1,1 @@
+java -jar vnu.jar index.html : To run validator.

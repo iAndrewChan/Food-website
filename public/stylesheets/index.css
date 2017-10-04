@@ -1,0 +1,133 @@
+.small_section {
+    width: 100vw;
+    height: 30vh;
+    float: left;
+    clear: both;
+    text-align: center;
+    overflow:auto;
+  }
+
+.med_section {
+    width: 100vw;
+    height: 65vh;
+    float: left;
+    clear: both;
+    overflow:auto;
+}
+
+.customise_margins {
+    margin-top: 2%;
+    margin-left: 2%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /* ie8 */
+}
+
+.large_section {
+    width: 100vw;
+    height: 80vh;
+    float: left;
+    clear: both;
+    overflow:auto;
+}
+
+.cities_section {
+  width: 100%;
+  height: 15%;
+  position: absolute;
+  bottom: 0;
+  background-color: #00aaff;
+}
+
+.first_page_heading {
+  font-size:  50px;
+  font-family: 'PT Sans', sans-serif;
+  color: white;
+  margin-top: 15%;
+}
+
+.triple_section {
+  width: 60vh;
+  height: 80%;
+  position: relative;
+}
+
+.margins {
+  margin-left: 40%;
+  margin-top: 20%;
+  margin-right: 5%;
+  margin-bottom: 10%;
+}
+
+.triple_inside {
+  width: 60%;
+  height: 90%;
+  position: relative;
+  border:
+}
+
+.triple_inside img {
+    height: 100%;
+    width: 100%;
+
+}
+
+.first_section_triple {
+  height: 85%;
+  width: 100%;
+}
+
+.second_section_triple {
+  background-color: #00aaff;
+  height: 15%;
+  width: 100%;
+}
+
+.how_it_works_title_spacing {
+  width: 100vw;
+  height: 15vh;
+  float: left;
+  clear: both;
+  margin-top: 4%;
+  text-align: center;
+}
+
+.filler_section {
+  width: 100vw;
+  height: 3px;
+  float: left;
+  clear: both;
+}
+
+
+.round_borders {
+  border-radius: 50px;
+}
+
+.float_left {
+  float:left;
+}
+
+.clear_both {
+  clear: both;
+}
+
+.index_margin {
+    margin-top: 30px;
+}
+
+#chat-tab {
+  position: relative;
+  right: 2%;
+  background-attachment: fixed
+  background-position: right bottom;
+
+}
+
+#navigation {
+  background: blue;
+  margin-top: 2%
+}

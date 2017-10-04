@@ -1,0 +1,120 @@
+.glyphicon { margin-right:5px; }
+.thumbnail
+{
+    margin-bottom: 20px;
+    padding: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+
+.item.list-group-item
+{
+    float: none;
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+.item.list-group-item:nth-of-type(odd):hover,.item.list-group-item:hover
+{
+    background: #428bca;
+}
+
+.item.list-group-item .list-group-image
+{
+    margin-right: 10px;
+}
+.item.list-group-item .thumbnail
+{
+    margin-bottom: 10px;
+}
+.item.list-group-item .caption
+{
+    padding: 9px 9px 0px 9px;
+}
+.item.list-group-item:nth-of-type(odd)
+{
+    background: #eeeeee;
+}
+
+.item.list-group-item:before, .item.list-group-item:after
+{
+    display: table;
+    content: " ";
+}
+
+.item.list-group-item img
+{
+    float: left;
+}
+.item.list-group-item:after
+{
+    clear: both;
+}
+.list-group-item-text
+{
+    margin: 0 0 11px;
+}
+
+
+/* Portrait phones and smaller */
+@media (max-width: 420px) {
+  .col-lg-4 {
+    width: 420px;
+  },
+  .col-xs-4 {
+    width: 420px;
+  }
+}
+.product_start_padding {
+  margin-top: 70px;
+}
+
+.product_text {
+  font-size:  16px;
+  font-family: 'PT Sans', sans-serif;
+  color: grey;
+  font-style: oblique;
+}
+
+.price_text {
+  font-size:  16px;
+  font-family: 'PT Sans', sans-serif;
+  color: #00aaff;
+  margin-top: 10px;
+}
+
+.block {
+  display:block;
+}
+
+/* outlines for the drag feature */
+.item.outline {
+  border: 2px dashed #000;
+}
+
+.item{
+  cursor: move;
+}
+
+/* set the images to be undraggable */
+.list-group-image{
+  user-drag: none; 
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+/*things i must remember, my draggable elements must be selectable, but not when its is being dragged */
+/* Prevent the text contents of draggable elements from being selectable. */
+[draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  /* Required to make elements draggable in old WebKit */
+  -khtml-user-drag: element;
+  -webkit-user-drag: element;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!--<title>Synok</title>-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/styles.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/backgrounds.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/index_texts.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/chatbox.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/help.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/signup.css">
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title> FOOD DEALS </title>
+
+</head>
+
+
+<body class ="start_padding">
+    <% include templates/scrollnav.html %>
+
+    <% if (hasErrors) { %>
+        <div class="alert alert-danger">
+            <% messages.forEach(function(error) { %>
+                <p><%= error %> </p>
+            <% }) %>
+        </div>
+    <% } %>
+
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <h1>Sign Up</h1>
+            <form action="/user/signup" method="post">
+                <div class="form-group">
+                    <label for="email">E-Mail</label>
+                    <input type="text" id="email" name="email" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" class="form-control">
+                </div>
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+
+        </div>
+    </div>
+</body>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <!--<title>Synok</title>-->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="cache-control" content="no-cache" />
+      <meta name="expires" content="0" />
+      <meta name="pragma" content="no-cache" />
+      <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
+      <link rel="stylesheet" type="text/css" href="/stylesheets/styles.css">
+      <link rel="stylesheet" type="text/css" href="/stylesheets/backgrounds.css">
+      <link rel="stylesheet" type="text/css" href="/stylesheets/index_texts.css">
+      <link rel="stylesheet" type="text/css" href="/stylesheets/cuisines.css">
+      <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <title> FOOD DEALS </title>
+  </head>
+
+
+<body class="start_padding">
+    <% include templates/scrollnav.html %>
+
+    <div class="wrapper">
+          <% cuisines.forEach(function(cuisine) { %>
+              <a href="javascript: submitForm(<%=cuisine.cuisine%>);">
+                <div class="parent left" onclick="">
+                    <div class="child food">
+                        <img src="<%= cuisine.imagePath %>" alt="..." class="background_settings img-rounded box_shadows background_settings">
+                        <h1 class="link"><%= cuisine.cuisine %></h1>
+                    </div>
+                </div>
+              </a>
+              <form action="/cuisines/deals" method="post" id="<%=cuisine.cuisine%>">
+                  <input type="hidden" name="city_choice" value="<%= cuisine.city %>">
+                  <input type="hidden" name="cuisine_type" value="<%= cuisine.cuisine %>">
+              </form>
+          <% }) %>
+    </div>
+
+    <script>
+        function submitForm(city){
+            city.submit();
+        }
+    </script>
+
+
+
+  </body>
+</html>

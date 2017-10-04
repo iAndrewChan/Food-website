@@ -1,0 +1,50 @@
+.first_page_text {
+  font-size:  20px;
+  font-family: 'PT Sans', sans-serif;
+  color: white;
+}
+
+
+.how_it_works_text {
+  font-size:  15px;
+  font-family: 'PT Sans', sans-serif;
+  color: #a6a6a6;
+  font-style: oblique;
+}
+
+
+.how_it_works_numbers {
+  font-size:  40px;
+  font-family: 'PT Sans', sans-serif;
+  color: #00aaff;
+  font-style: oblique;
+}
+
+.how_it_works_title {
+  font-size:  30px;
+  font-family: 'PT Sans', sans-serif;
+  color: #00aaff;
+}
+
+.followus_text {
+  font-size:  40px;
+  font-family: 'PT Sans', sans-serif;
+  color: #00aaff;
+}
+
+.offers_text {
+  font-size: 20px;
+  font-family: 'PT Sans', sans-serif;
+  color: white;
+  position: relative;
+  margin-top: 10px;
+  margin-left: 50px;
+}
+
+.cities_text {
+  font-size: 25px;
+  font-family: 'PT Sans', sans-serif;
+  color: white;
+  position: relative;
+  margin-top: 10px;
+}

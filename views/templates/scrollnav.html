@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/deals.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/login.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/scrollnav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Dosis|Oswald|Raleway" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/register.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
+
+      <img src="/images/icons/shopping-cart.svg" alt="..." height="64" width="64" id="logo-image"/>
+      <a class="navbar-brand price_text" href="/">
+          <i aria-hidden="true"> </i>
+          <span id="logo-title" class="price_text">FOOD DEALS</span>
+      </a>
+    </div>
+
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+
+           <li>
+               <a href="/shopping-cart">
+                   <i aria-hidden="true" class="price_text fa fa-shopping-cart" id="shopping-cart-icon"> Shopping Cart </i>
+                   <% if(session.cart) { %>
+                        <span class="badge"><%= session.cart.totalQty %></span>
+                   <% } else {%>
+                       <span class="badge"><%= 0 %></span>
+                   <%}%>
+               </a>
+           </li>
+           <li>
+               <% if(login) { %>
+                   <li><a href="/user/profile" class="price_text"><i class="fa fa-user price_text" aria-hidden="true">User Account</i></a></li>
+                   <li role="separator" class="divider"></li>
+                   <li><a href="/user/logout" class="price_text"><i class="price_text fa" aria-hidden="true">Logout</i></a></li>
+               <% } else { %>
+                   <li><a href="/user/signup" class="price_text"><span class="banner-text price_text">Sign up </span></a></li>
+                   <li><a href="/user/signin" class="price_text"><img src="/images/icons/door.svg" alt="..." height="32" width="32"/><span class="banner-text price_text">Sign in</span></a></li>
+               <% } %>
+          </li>
+       </ul>
+      </div>
+
+    </div>
+  </div>
+
+
+</nav>
+
+
+        <!-- LOGIN PAGE -->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-admin" role="document">
+
+    <div class="modal-content">
+      <!-- LOGIN TITLE -->
+      <div class="modal-header" style="background-color: #00aaff;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h1 class="modal-title text-center login_text" id="exampleModalLabel">LOGIN</h1>
+      </div>
+
+
+      <div class="modal-body ">
+        <form action="/user/signin" method="post">
+          <div class="form-group">
+            <label for="formGroupExampleInput">Email address</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="e.g. email@example.co.uk">
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput2">Password</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Password">
+          </div>
+
+          <p class="keeplogin">
+							<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" />
+							<label for="loginkeeping">Remember me</label>
+					</p>
+
+
+        </form>
+
+      </div>
+
+
+      <div class="modal-footer">
+
+        <div style="text-align: center;">
+           <button type="button" data-dismiss="modal" class="btn  button_settings">LOGIN</button>
+        </div>
+        <p class="change_link text-center" style="margin-top:15px;">
+                Not a member yet ?
+                <a href="/user/signup" class="to_register">Join us</a>
+        </p>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</html>

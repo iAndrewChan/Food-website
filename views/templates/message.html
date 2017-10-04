@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!--<title>Synok</title>-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/styles.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/backgrounds.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/index_texts.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/chatbox.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/help.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <title> FOOD DEALS </title>
+
+</head>
+
+<!-- Contact me section  must animate it to come up slowly and not suddenly change-->
+
+<button type="button" class="help-fixedbutton help-button_settings btn" data-toggle="modal" data-target="#messageModal">
+<img src="images/icons/messenger.svg" alt="..." height="20" width="20"/>
+    Contact Us
+</button>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-admin" role="document">
+
+    <div class="modal-content">
+      <!-- LOGIN TITLE -->
+      <div class="modal-header" style="background-color: #00aaff;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h1 class="modal-title text-center login_text" id="exampleModalLabel">MESSAGE</h1>
+      </div>
+
+
+      <div class="modal-body ">
+        <form>
+          <div class="form-group">
+            <label for="formGroupExampleInput">Email</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="e.g. email@example.co.uk">
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput2">Title</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="e.g. Refund">
+          </div>
+
+          <div class="form-group">
+            <label for="exampleTextarea"> Message </label>
+            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+          </div>
+
+        </form>
+
+      </div>
+
+
+      <div class="modal-footer">
+
+        <div style="text-align: center;">
+           <button type="button" data-dismiss="modal" class="btn button_settings">Send Message</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!--<title>Synok /cuisines/deals/restaurant</title>-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/styles.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/backgrounds.css">
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <title> FOOD DEALS </title>
+</head>
+
+<body class="product_start_padding">
+    <% include templates/scrollnav.html %>
+
+    <button type="button" class="btn btn-primary customise_margins" id="customise"> Customise </button>
+
+    <div class="container">
+      <div id="products" class="row list-group">
+          <% deals.forEach(function(deal) { %>
+              <a href="javascript: submitForm('<%=deal.restaurant%>');">
+                <div class="item col-md-4 col-lg-4 food_hover" draggable="true">
+                    <div class="thumbnail">
+                        <img class="group list-group-image" src="<%= deal.imagePath %>"  alt=""/>
+                        <div class="caption">
+                            <h4 class="group inner list-group-item-heading text-center">
+                               <%= deal.restaurant  %></h4>
+                            <p class="group inner product_text">
+                                Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                            <div class="row">
+                                <div class="col-xs-12 col-xl-6">
+                                <p class="price_text text-center">
+                                    £<%= deal.price  %></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+               </a>
+               <form action="/cuisines/deals/restaurant" method="post" id="<%=deal.restaurant%>">
+                   <input type="hidden" name="restaurant_choice" value="<%=deal.restaurant%>">
+               </form>
+          <% }) %>
+      </div>
+    </div>
+    <% include templates/message.html %>
+    <script>
+        function submitForm(restaurant){
+            // window.alert(restaurant);
+            document.getElementById(restaurant).submit();
+        }
+    </script>
+    <script src="/scripts/DnD.js"></script>
+
+</body>
+</html>

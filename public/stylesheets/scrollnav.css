@@ -1,0 +1,19 @@
+.container-fluid {
+	height: auto;
+}
+
+#logo-image {
+	float:left;
+	margin-top:2%;
+}
+
+#logo-title{
+	margin-top:2%;
+	font-size: 2.2em;
+	float:left;
+}
+
+.banner-text, #shopping-cart-icon {
+	font-size: 1.5em;
+}
+

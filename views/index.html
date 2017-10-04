@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!--<title>Synok</title>-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/styles.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/backgrounds.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/index_texts.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/chatbox.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/help.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <title> FOOD DEALS </title>
+</head>
+
+<body class ="start_padding">
+    <% include templates/scrollnav.html %>
+    <!-- First section -->
+    <a href="/">
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3 ">
+                <% if(noMessages) { %>
+
+                <%} else { %>
+                    <div id="success" class="alert alert-success start_padding">
+                        <%= successMsg %>
+                    </div>
+                <%}%>
+            </div>
+        </div>
+      <div class="large_section background_1 background_settings" >
+        <div class="container text-center">
+          <div class="row">
+            <h1 class="first_page_heading" >AWESOME FOOD DEALS</h1>
+          </div>
+          <div class="row">
+            <p class="first_page_text"> Lorem ipsum dolor sit amet, interdum urna nec nullam nulla ac rutrum, id pellentesque erat dui integer</p>
+          </div>
+        </div>
+      </div>
+    </a>
+
+
+    <!-- TRIPLE SECTIONS -->
+        <div class="med_section">
+                <% cities.forEach(function(city) { %>
+
+                        <a href="javascript: submitForm(<%=city.name%>);">
+                          <div class="float_left triple_section border-radius">
+                            <div class="triple_inside margins " >
+                            <img src="<%= city.imagePath %>" alt="..." class="background_settings img-rounded box_shadows background_settings">
+                              <div class="cities_section img-rounded float_left">
+                                <p class="cities_text text-center"><%= city.name %></p>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+
+                    <form action="/cuisines" method="post" id="<%=city.name%>">
+                        <input type="hidden" name="city_choice" value="<%= city.name %>">
+                    </form>
+                <% }) %>
+
+        </div>
+
+
+    <script>
+        function submitForm(city){
+            city.submit();
+        }
+    </script>
+
+     <!-- HOW IT WORKS -->
+     <div class="how_it_works_title_spacing how_it_works_title">
+       <h1> HOW IT WORKS </h1>
+     </div>
+
+     <div class= "small_section background_info index_margin">
+       <div class ="container">
+         <div class="row">
+           <div class="col-md-4">
+             <h1 class="how_it_works_numbers"> 1 </h1>
+             <p class="how_it_works_text">Lorem ipsum dolor sit amet, interdum urna n
+               ec nullam nulla ac rutrum, id pellentesque erat dui integer
+               morbi urna, mi lobortis nibh. Pulvinar libero laoreet consequat odio. Dolore eget neque lectus bibendum vel in, ligula
+               id, duis vestibulum. Amet condimentum duis dolor tincidunt convallis faucibus. </p>
+           </div>
+           <div class="col-md-4">
+             <h1 class="how_it_works_numbers"> 2 </h1>
+             <p class="how_it_works_text">Lorem ipsum dolor sit amet, interdum urna n
+               ec nullam nulla ac rutrum, id pellentesque erat dui integer
+               morbi urna, mi lobortis nibh. Pulvinar libero laoreet consequat odio. Dolore eget neque lectus bibendum vel in, ligula
+               id, duis vestibulum. Amet condimentum duis dolor tincidunt convallis faucibus. </p>
+           </div>
+           <div class="col-md-4">
+             <h1 class="how_it_works_numbers"> 3 </h1>
+             <p class="how_it_works_text">Lorem ipsum dolor sit amet, interdum urna n
+               ec nullam nulla ac rutrum, id pellentesque erat dui integer
+               morbi urna, mi lobortis nibh. Pulvinar libero laoreet consequat odio. Dolore eget neque lectus bibendum vel in, ligula
+               id, duis vestibulum. Amet condimentum duis dolor tincidunt convallis faucibus. </p>
+           </div>
+         </div>
+       </div>
+     </div>
+
+    <!-- Social Media section  -->
+    <div class="how_it_works_title_spacing ">
+      <h1 class="followus_text"> FOLLOW US! </h1>
+    </div>
+    <a href="https://twitter.com/">
+     <div class="med_section social_media_1 background_settings">
+     </div>
+    </a>
+
+    <!-- Message  -->
+    <% include templates/message.html %>
+
+
+
+
+
+
+</body>
+</html>

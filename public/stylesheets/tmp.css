@@ -1,0 +1,70 @@
+<style rel="stylesheet" type="text/css" data-reactid=".0.0">#olark-wrapper .olark-launch-button {
+  background-color: #00aff0 !important;
+}
+#olark-wrapper .olark-launch-button svg path {
+  fill: #ffffff !important;
+}
+#olark-wrapper .olark-launch-button .olark-button-text {
+  color: #ffffff !important;
+}
+#olark-wrapper .olark-top-bar {
+  background-color: #00aff0 !important;
+  color: #ffffff !important;
+  border-color: #009bd6 !important;
+}
+#olark-wrapper .olark-top-bar-text {
+  color: #ffffff !important;
+}
+#olark-wrapper .olark-top-bar-arrow {
+  fill: #ffffff !important;
+}
+#olark-wrapper .olark-end-chat-button {
+  color: #ffffff !important;
+  background-color: rgba(0, 137, 189, 0.5) !important;
+}
+#olark-wrapper .olark-end-chat-button:hover {
+  background-color: #0089bd !important;
+}
+#olark-wrapper #olark-container .olark-visitor-message {
+  background-color: rgba(0, 175, 240, 0.25) !important;
+  border: none !important;
+}
+#olark-wrapper #olark-container .olark-form-send-button {
+  background-color: #00aff0 !important;
+  color: #ffffff !important;
+}
+#olark-wrapper #olark-container .olark-feedback-form-button {
+  background-color: #00aff0 !important;
+  color: #ffffff !important;
+}
+#olark-wrapper #olark-container .olark-restart-button {
+  background-color: #00aff0 !important;
+  color: #ffffff !important;
+}
+#olark-wrapper #olark-container .olark-branding-panel .olark-branding-cancel-button {
+  background-color: #00aff0 !important;
+  border: none !important;
+  color: #ffffff !important;
+}
+#olark-wrapper #olark-container .olark-branding-panel .olark-branding-go-button {
+  border: none !important;
+  background: rgba(0, 175, 240, 0.35) !important;
+}
+#olark-wrapper #olark-container .olark-send-transcript-container .olark-send-transcript-form.olark-inline-form-valid .olark-form-input-container {
+  border-color: #00aff0 !important;
+}
+#olark-wrapper #olark-container .olark-send-transcript-container .olark-send-transcript-form.olark-inline-form-valid .olark-send-icon {
+  fill: #00aff0 !important;
+}
+#olark-wrapper .olark-end-chat-flag {
+  fill: #00aff0 !important;
+}
+#olark-wrapper #olark-container .olark-form-confirmation-icon .olark-launch-button-icon {
+  fill: #00aff0 !important;
+}
+#olark-wrapper #olark-container .olark-form-input:focus {
+  border-color: #00aff0 !important;
+}
+#olark-wrapper #olark-container .olark-form-message-input:focus {
+  border-color: #00aff0 !important;
+}
